@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday, Annazirah ♡</title>
+<meta name="theme-color" content="#08050a">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap');
+
+:root{
+  --bg:#08050a; --card:rgba(255,255,255,.065); --gold:#e8c878;
+  --gold2:#fff0ae; --pink:#e7a6b8; --text:#fff8ef; --muted:#cbbfc7;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:
+    radial-gradient(circle at 15% 10%, rgba(210,155,73,.14), transparent 28%),
+    radial-gradient(circle at 85% 30%, rgba(181,76,117,.12), transparent 30%),
+    linear-gradient(145deg,#08050a,#130b12 48%,#070507);
+  color:var(--text); font-family:Montserrat,sans-serif; overflow-x:hidden;
+}
+body:before{
+  content:""; position:fixed; inset:0; pointer-events:none; opacity:.13;
+  background-image:radial-gradient(#fff 0.6px,transparent .6px);
+  background-size:4px 4px; mix-blend-mode:screen; z-index:20;
+}
+a{text-decoration:none;color:inherit}
+button{font:inherit}
+
+#intro{
+  position:fixed; inset:0; z-index:100; display:grid; place-items:center;
+  background:radial-gradient(circle,#241421 0%,#090509 65%);
+  transition:1s ease; overflow:hidden;
+}
+.intro-box{text-align:center;padding:30px;position:relative;z-index:2}
+.crown{font-size:42px;filter:drop-shadow(0 0 20px rgba(232,200,120,.5));animation:float 3s ease-in-out infinite}
+.intro-small{letter-spacing:5px;text-transform:uppercase;color:var(--gold);font-size:11px;margin:22px 0}
+.intro-name{font:600 clamp(55px,13vw,125px)/.82 "Cormorant Garamond",serif}
+.intro-sub{color:var(--muted);margin:22px 0 28px;font-size:13px;letter-spacing:2px}
+.open{
+  border:1px solid rgba(232,200,120,.6); background:rgba(232,200,120,.08);
+  color:var(--gold2); padding:14px 27px;border-radius:999px;cursor:pointer;
+  letter-spacing:2px;text-transform:uppercase;transition:.35s;
+  box-shadow:0 0 0 1px rgba(255,255,255,.04) inset,0 0 35px rgba(232,200,120,.08)
+}
+.open:hover{transform:translateY(-3px);background:rgba(232,200,120,.15);box-shadow:0 0 35px rgba(232,200,120,.2)}
+#intro.hide{opacity:0;visibility:hidden;transform:scale(1.06)}
+
+canvas{position:fixed;inset:0;pointer-events:none;z-index:5}
+.particles{position:fixed;inset:0;pointer-events:none;z-index:1}
+.star{position:absolute;width:2px;height:2px;background:#fff;border-radius:50%;animation:twinkle var(--d) ease-in-out infinite}
+
+nav{
+  position:fixed;top:20px;left:50%;transform:translateX(-50%);z-index:30;
+  padding:9px 16px;border:1px solid rgba(255,255,255,.09);border-radius:999px;
+  background:rgba(8,5,10,.5);backdrop-filter:blur(14px);font-size:10px;letter-spacing:2px;
+  color:#ded2d9
+}
+nav span{margin:0 8px;color:var(--gold)}
+
+main{position:relative;z-index:10}
+section{min-height:100vh;display:grid;place-items:center;padding:90px 22px}
+.hero{text-align:center;position:relative}
+.eyebrow{font-size:11px;letter-spacing:5px;text-transform:uppercase;color:var(--gold);margin-bottom:22px}
+h1{font:600 clamp(68px,15vw,155px)/.78 "Cormorant Garamond",serif;letter-spacing:-3px}
+h1 em{display:block;font-size:.34em;letter-spacing:8px;font-style:normal;color:var(--pink);margin:27px 0}
+.hero-copy{max-width:650px;margin:30px auto;color:var(--muted);line-height:1.9;font-size:14px}
+.gold-line{width:95px;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent);margin:24px auto}
+.scroll{font-size:10px;letter-spacing:4px;color:#8e818a;margin-top:55px;animation:pulse 2s infinite}
+
+.photo-frame{
+  width:min(430px,86vw); aspect-ratio:4/5; padding:8px; position:relative;
+  background:linear-gradient(135deg,rgba(255,240,174,.65),transparent 35%,rgba(232,200,120,.55));
+  box-shadow:0 30px 90px rgba(0,0,0,.65),0 0 45px rgba(232,200,120,.08);
+  transform:rotate(-1deg);
+}
+.photo-frame:after{content:"";position:absolute;inset:15px;border:1px solid rgba(255,240,174,.28);pointer-events:none}
+.photo-frame img{width:100%;height:100%;object-fit:cover;display:block}
+.memory{text-align:center;max-width:1100px}
+.section-title{font:600 clamp(44px,8vw,75px) "Cormorant Garamond",serif}
+.section-sub{color:var(--muted);font-size:12px;letter-spacing:1px;margin:10px 0 35px}
+.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:15px;width:min(1050px,100%)}
+.gallery figure{height:390px;overflow:hidden;border:1px solid rgba(255,255,255,.1);background:#100a0f;position:relative}
+.gallery figure:nth-child(2),.gallery figure:nth-child(5),.gallery figure:nth-child(8){transform:translateY(28px)}
+.gallery img{width:100%;height:100%;object-fit:cover;transition:1s}
+.gallery figure:hover img{transform:scale(1.07)}
+.gallery figcaption{position:absolute;bottom:0;left:0;right:0;padding:25px 12px 13px;text-align:left;font:500 19px "Cormorant Garamond",serif;background:linear-gradient(transparent,rgba(0,0,0,.7));opacity:0;transition:.4s}
+.gallery figure:hover figcaption{opacity:1}
+
+.letter-wrap{width:min(800px,100%);text-align:center}
+.letter{
+  margin-top:35px;padding:45px 38px;text-align:left;border:1px solid rgba(232,200,120,.22);
+  background:linear-gradient(145deg,rgba(255,255,255,.08),rgba(255,255,255,.025));
+  box-shadow:0 30px 100px rgba(0,0,0,.4);backdrop-filter:blur(15px);position:relative;
+}
+.letter:before{content:"“";position:absolute;right:25px;top:-35px;font:150px "Cormorant Garamond",serif;color:rgba(232,200,120,.12)}
+.letter p{font:400 21px/1.65 "Cormorant Garamond",serif;color:#f4e9e9;margin-bottom:18px}
+.signature{color:var(--gold);font:600 24px "Cormorant Garamond",serif;text-align:right}
+
+.gift{text-align:center}
+.gift-box{font-size:95px;cursor:pointer;display:inline-block;filter:drop-shadow(0 0 30px rgba(232,200,120,.25));animation:float 3s infinite}
+.gift-note{color:var(--muted);font-size:12px;margin:20px 0}
+#surprise{display:none;max-width:680px;margin:30px auto 0}
+#surprise.show{display:block;animation:reveal 1s both}
+.surprise-card{padding:35px;border:1px solid rgba(232,200,120,.3);background:rgba(255,255,255,.045)}
+.surprise-card h2{font:600 52px "Cormorant Garamond",serif;color:var(--gold2);margin-bottom:15px}
+.surprise-card p{color:#dfd2d9;line-height:1.9;font-size:13px}
+
+footer{text-align:center;padding:50px 20px 80px;color:#796c75;font-size:10px;letter-spacing:2px}
+footer strong{color:var(--gold);font-family:"Cormorant Garamond";font-size:22px;letter-spacing:0}
+
+.music{
+  position:fixed;right:20px;bottom:20px;z-index:40;width:52px;height:52px;border-radius:50%;
+  border:1px solid rgba(232,200,120,.45);background:rgba(10,6,11,.7);color:var(--gold2);
+  cursor:pointer;backdrop-filter:blur(10px);font-size:18px;box-shadow:0 0 25px rgba(232,200,120,.12)
+}
+.music.playing{animation:spin 3s linear infinite}
+
+@keyframes float{50%{transform:translateY(-10px)}}
+@keyframes twinkle{0%,100%{opacity:.15}50%{opacity:1;transform:scale(1.8)}}
+@keyframes pulse{50%{opacity:.35}}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes reveal{from{opacity:0;transform:translateY(20px) scale(.97)}to{opacity:1;transform:none}}
+@media(max-width:700px){
+  nav{display:none}.gallery{grid-template-columns:1fr 1fr;gap:9px}
+  .gallery figure{height:280px}.gallery figure:nth-child(2),.gallery figure:nth-child(5),.gallery figure:nth-child(8){transform:none}
+  .letter{padding:30px 22px}.letter p{font-size:19px}
+}
+</style>
+</head>
+<body>
+
+<div id="intro">
+  <div class="intro-box">
+    <div class="crown">✦</div>
+    <div class="intro-small">A little surprise for</div>
+    <div class="intro-name">Annazirah</div>
+    <div class="intro-sub">made with love, just for you ♡</div>
+    <button class="open" onclick="openGift()">Buka Kejutan ♡</button>
+  </div>
+</div>
+
+<div class="particles" id="particles"></div>
+<canvas id="confetti"></canvas>
+
+<nav>FOR <span>♡</span> ANNAZIRAH</nav>
+
+<button class="music" id="musicBtn" title="Putar My Heart">♫</button>
+<audio id="music" loop>
+  <!-- Letakkan file lagu yang kamu miliki secara legal di folder utama dengan nama: my-heart.mp3 -->
+  <source src="my-heart.mp3" type="audio/mpeg">
+</audio>
+
+<main>
+<section class="hero">
+  <div>
+    <div class="eyebrow">The most beautiful chapter</div>
+    <h1>Happy Birthday<em>to my favorite person</em>ANNAZIRAH</h1>
+    <div class="gold-line"></div>
+    <p class="hero-copy">
+      Hari ini bukan cuma tentang bertambahnya umur kamu,
+      tapi tentang bersyukurnya aku karena dunia pernah mempertemukan aku
+      dengan seseorang seindah kamu.
+    </p>
+    <div class="scroll">SCROLL SLOWLY ↓</div>
+  </div>
+</section>
+
+<section>
+  <div class="memory">
+    <div class="eyebrow">A little piece of you</div>
+    <div class="section-title">My favorite memories ♡</div>
+    <div class="section-sub">Setiap foto punya cerita. Dan setiap cerita tentang kamu selalu jadi favoritku.</div>
+    <div class="gallery">
+      <figure><img src="foto/anna_1.jpg"><figcaption>beautiful, always.</figcaption></figure>
+      <figure><img src="foto/anna_2.jpg"><figcaption>your smile ♡</figcaption></figure>
+      <figure><img src="foto/anna_3.jpg"><figcaption>the one I adore.</figcaption></figure>
+      <figure><img src="foto/anna_4.jpg"><figcaption>simply you.</figcaption></figure>
+      <figure><img src="foto/anna_5.jpg"><figcaption>my favorite view.</figcaption></figure>
+      <figure><img src="foto/anna_6.jpg"><figcaption>still my favorite.</figcaption></figure>
+      <figure><img src="foto/anna_7.jpg"><figcaption>precious ♡</figcaption></figure>
+      <figure><img src="foto/anna_8.jpg"><figcaption>one of a kind.</figcaption></figure>
+      <figure><img src="foto/anna_9.jpg"><figcaption>forever special.</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="letter-wrap">
+    <div class="eyebrow">A letter for you</div>
+    <div class="section-title">Dear Annazirah...</div>
+    <div class="letter">
+      <p>Selamat ulang tahun, sayang. ♡</p>
+      <p>
+        Terima kasih sudah hadir dan menjadi salah satu bagian paling indah
+        dalam hidupku. Aku mungkin nggak selalu pandai mengungkapkan semuanya,
+        selalu mengulangi kesalahan yang sama, yang membuat kamu merasa badmood ketika berkomunikasi denganku
+        tapi aku harap kamu selalu tahu kalau kamu begitu berarti buat aku.
+      </p>
+      <p>
+        Di hari spesial kamu ini, aku cuma ingin kamu selalu sehat,
+        bahagia, dimudahkan dalam setiap langkah, dan semua hal baik yang
+        kamu impikan perlahan datang satu per satu.
+      </p>
+      <p>
+        Semoga kamu selalu diberikan kemudahan untuk urusan pendidikannya sehingga lulus tepat waktu.
+      </p>
+      <p>
+        Semoga senyum kamu selalu ada, serta kalau suatu hari dunia terasa
+        berat, semoga kamu ingat kalau ada seseorang yang selalu ingin melihat
+        kamu baik-baik saja.
+      </p>
+      <p>
+        Happy birthday, Princess Annazirah. Terima kasih sudah menjadi bagian hidupku.
+        Jangan berubah menjadi orang lain hanya untuk disukai dunia.
+        Tetaplah menjadi perempuan hebat yang aku kenal.
+      </p>
+      <div class="signature">— seseorang yang sayang kamu dari Cirebon ♡</div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="gift">
+    <div class="eyebrow">One last surprise</div>
+    <div class="section-title">Ada sesuatu buat kamu...</div>
+    <div class="gift-box" onclick="surprise()">🎁</div>
+    <div class="gift-note">Klik hadiahnya pelan-pelan ♡</div>
+    <div id="surprise">
+      <div class="surprise-card">
+        <h2>For You, Annazirah ♡</h2>
+        <p>
+          Kalau aku boleh punya satu doa untuk kamu hari ini:
+          semoga hidup selalu memperlakukan kamu dengan lembut.
+          Semoga langkahmu dipenuhi hal-hal baik, semoga semua yang kamu
+          perjuangkan punya hasil yang indah, mamah jannati juga selalu sehat panjang umur dan semoga kamu selalu punya
+          alasan untuk tersenyum.
+        </p>
+        <p>
+        Dan kalau boleh, aku ingin menyelipkan satu doa lagi untuk kita. Semoga kita selalu diberi kekuatan untuk bertahan dalam hubungan ini, bukan hanya saat semuanya terasa mudah, tapi juga ketika ada masalah, perbedaan, dan hari-hari yang menguji kita.
+      </p>
+      <p>
+        Semoga kita selalu memilih untuk saling memahami daripada menyerah, saling menggenggam daripada melepaskan, dan saling menguatkan ketika salah satu dari kita sedang lelah.
+      </p>
+      <p>
+        Aku nggak tahu seperti apa perjalanan kita ke depannya, tapi aku berharap kita bisa terus berjalan bersama, melewati semuanya satu per satu, sampai akhirnya apa yang selama ini kita perjuangkan benar-benar membawa kita ke satu tujuan yang sama: **pelaminan**.
+      </p>
+      <p>
+        Semoga hubungan ini bukan hanya menjadi cerita indah untuk hari ini, tapi menjadi awal dari kehidupan yang panjang bersama. Semoga kita tetap saling memilih, saling menjaga, dan saling mencintai sampai nanti. 🤍
+      </p>
+        <br>
+        <p>
+          Selamat ulang tahun untuk perempuan yang senyumnya selalu punya
+          cara sendiri untuk bikin hariku lebih baik. I love you. ♡
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <strong>ANNAZIRAH ♡</strong><br><br>
+  made with love • happy birthday
+</footer>
+
+<script>
+const intro = document.getElementById('intro');
+function openGift(){
+  intro.classList.add('hide');
+  setTimeout(()=>{ document.body.style.overflow='auto'; },900);
+  startConfetti();
+  setTimeout(()=>document.getElementById('music').play().catch(()=>{}),700);
+}
+document.body.style.overflow='hidden';
+
+const particles=document.getElementById('particles');
+for(let i=0;i<85;i++){
+  const s=document.createElement('i'); s.className='star';
+  s.style.left=Math.random()*100+'%'; s.style.top=Math.random()*100+'%';
+  s.style.setProperty('--d',(2+Math.random()*5)+'s');
+  s.style.animationDelay=(-Math.random()*5)+'s'; particles.appendChild(s);
+}
+
+const audio=document.getElementById('music'), btn=document.getElementById('musicBtn');
+btn.onclick=()=>{
+  if(audio.paused){audio.play();btn.classList.add('playing');}
+  else{audio.pause();btn.classList.remove('playing');}
+};
+audio.onplay=()=>btn.classList.add('playing');
+audio.onpause=()=>btn.classList.remove('playing');
+
+function surprise(){
+  document.getElementById('surprise').classList.add('show');
+  startConfetti();
+  document.getElementById('surprise').scrollIntoView({behavior:'smooth',block:'center'});
+}
+
+function startConfetti(){
+  const c=document.getElementById('confetti'),ctx=c.getContext('2d');
+  c.width=innerWidth;c.height=innerHeight;
+  const pieces=Array.from({length:180},()=>({
+    x:innerWidth/2+(Math.random()-.5)*180,y:innerHeight*.45,
+    vx:(Math.random()-.5)*12,vy:-Math.random()*13-5,
+    s:Math.random()*7+3,r:Math.random()*6.28,
+    g:.25+Math.random()*.2,life:150+Math.random()*70
+  }));
+  let frame=0;
+  (function draw(){
+    ctx.clearRect(0,0,c.width,c.height);
+    pieces.forEach(p=>{
+      p.x+=p.vx;p.vy+=p.g;p.y+=p.vy;p.r+=.08;p.life--;
+      ctx.save();ctx.translate(p.x,p.y);ctx.rotate(p.r);
+      ctx.fillStyle=['#e8c878','#f3b4c8','#fff0ae','#ffffff'][Math.floor(Math.random()*4)];
+      ctx.fillRect(-p.s/2,-p.s/2,p.s,p.s*.55);ctx.restore();
+    });
+    if(frame++<180)requestAnimationFrame(draw); else ctx.clearRect(0,0,c.width,c.height);
+  })();
+}
+</script>
+</body>
+</html>
